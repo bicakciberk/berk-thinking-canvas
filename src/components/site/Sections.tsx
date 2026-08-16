@@ -282,7 +282,10 @@ export function Contact() {
           question<span className="text-coral">?</span>
         </h2>
         <div className="mt-10 grid gap-10 md:grid-cols-12">
-          <p data-reveal className="max-w-[42ch] text-[16px] text-muted-foreground md:col-span-5">
+          <p
+            data-reveal
+            className="max-w-[42ch] text-[17px] leading-[1.7] text-muted-foreground md:col-span-5"
+          >
             Ask it. Questions, ideas, or something you're stuck on — I'm usually pretty open to a
             conversation.
           </p>
@@ -296,10 +299,10 @@ export function Contact() {
             </a>
             <ul
               data-reveal
-              className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-muted-foreground"
+              className="mt-8 grid max-w-[26rem] grid-cols-2 gap-x-8 gap-y-3 text-[16px] text-muted-foreground sm:grid-cols-3"
             >
               {socials.map((s) => (
-                <li key={s.label}>
+                <li key={s.label} className="border-t border-rule/70 pt-2">
                   <a
                     href={s.href}
                     target="_blank"
@@ -312,6 +315,7 @@ export function Contact() {
               ))}
             </ul>
           </div>
+
         </div>
       </div>
     </section>
