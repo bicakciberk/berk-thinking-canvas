@@ -16,7 +16,7 @@ const socials = [
 export function About() {
   const ref = useReveal<HTMLElement>();
   return (
-    <section id="about" ref={ref} className="mx-auto max-w-[1180px] px-5 py-24 sm:px-8 sm:py-32">
+    <section id="about" ref={ref} className="mx-auto max-w-[1180px] px-5 pt-12 pb-20 sm:px-8 sm:pt-16 sm:pb-28">
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4">
           <p data-reveal className="label-xs">
@@ -32,7 +32,8 @@ export function About() {
           </h2>
         </div>
 
-        <div className="space-y-6 text-[16px] leading-[1.75] md:col-span-7 md:col-start-6 md:text-[17px]">
+        <div className="space-y-6 text-[17px] leading-[1.75] md:col-span-7 md:col-start-6 md:text-[18px]">
+
           <p data-reveal>
             Hi, I'm Berk. I enjoy learning how things work — and then finding better ways to make
             them work. So far that has taken me from frontend development and coding projects into
@@ -110,7 +111,7 @@ export function Exploring() {
               <h3 className="font-serif text-[22px] leading-snug sm:col-span-4 sm:text-[24px]">
                 {item.title}
               </h3>
-              <p className="max-w-[46ch] text-[15.5px] text-muted-foreground sm:col-span-6 sm:col-start-7 sm:text-[16px]">
+              <p className="max-w-[48ch] text-[16.5px] leading-[1.7] text-muted-foreground sm:col-span-6 sm:col-start-7 sm:text-[17px]">
                 {item.body}
               </p>
             </li>
@@ -128,15 +129,15 @@ export function Impact() {
       <p data-reveal className="label-xs">
         Impact
       </p>
-      <div className="mt-6 grid items-end gap-8 md:grid-cols-12">
+      <div className="mt-6 grid items-end gap-4 md:grid-cols-12 md:gap-6">
         <p
           data-reveal
           className="font-serif text-[64px] leading-[0.9] tracking-tight sm:text-[110px] md:col-span-7 lg:text-[140px]"
         >
           $9,136<span className="text-teal">+</span>
         </p>
-        <div className="md:col-span-4 md:col-start-9">
-          <p data-reveal className="text-[16px] text-muted-foreground">
+        <div className="border-t border-rule/70 pt-4 md:col-span-5 md:col-start-8 md:border-t-0 md:border-l md:pt-0 md:pl-6">
+          <p data-reveal className="max-w-[34ch] text-[17px] leading-[1.6] text-muted-foreground">
             Social impact generated through Catchafire volunteer projects.
           </p>
           <a
@@ -144,13 +145,14 @@ export function Impact() {
             href="https://www.catchafire.org/profiles/3330056/about"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-1 text-[15px] text-teal link-underline"
+            className="mt-3 inline-flex items-center gap-1 text-[16px] text-teal link-underline"
           >
             Catchafire profile
             <ArrowUpRight className="size-4" aria-hidden />
           </a>
         </div>
       </div>
+
     </section>
   );
 }
@@ -158,7 +160,8 @@ export function Impact() {
 const certificates = [
   {
     title: "International Computer Science Competition",
-    org: "ICSC",
+    org: "ICSC — International Computer Science Competition",
+
     href: "https://icscompetition.org/c/PerformanceReport-PR-2025-FF7A6D7C715-a2ad1d60c92ccd080b52694f1f6419c2.pdf?t=1768045252",
   },
   {
@@ -203,7 +206,10 @@ export function Learning() {
                   <span className="font-serif text-[20px] leading-snug transition-colors group-hover:text-teal sm:text-[23px]">
                     {c.title}
                   </span>
-                  <span className="mt-1 block text-[14px] text-muted-foreground">{c.org}</span>
+                  <span className="mt-1.5 block text-[15.5px] leading-snug text-muted-foreground">
+                    {c.org}
+                  </span>
+
                 </span>
                 <ArrowUpRight
                   className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:text-teal"
@@ -231,7 +237,7 @@ const interests = [
 export function BeyondCode() {
   const ref = useReveal<HTMLElement>();
   return (
-    <section id="beyond" ref={ref} className="mx-auto max-w-[1180px] px-5 py-24 sm:px-8 sm:py-32">
+    <section id="beyond" ref={ref} className="mx-auto max-w-[1180px] px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-8 md:grid-cols-12">
         <h2
           data-reveal
@@ -241,19 +247,19 @@ export function BeyondCode() {
           <br />
           at a screen
         </h2>
-        <ul className="flex flex-wrap items-center gap-x-3 gap-y-4 md:col-span-7 md:col-start-6">
-          {interests.map((t, i) => (
+        <ul className="flex max-w-[34ch] flex-wrap items-baseline gap-x-6 gap-y-4 md:col-span-6 md:col-start-6">
+          {interests.map((t) => (
             <li
               key={t}
               data-reveal
-              className="border-b border-rule px-1 pb-1 text-[16px] transition-colors hover:border-teal hover:text-teal"
-              style={{ transform: `translateY(${(i % 3) * 4}px)` }}
+              className="border-b border-rule pb-1 text-[17px] transition-colors hover:border-teal hover:text-teal"
             >
               {t}
             </li>
           ))}
         </ul>
       </div>
+
     </section>
   );
 }
@@ -276,7 +282,10 @@ export function Contact() {
           question<span className="text-coral">?</span>
         </h2>
         <div className="mt-10 grid gap-10 md:grid-cols-12">
-          <p data-reveal className="max-w-[42ch] text-[16px] text-muted-foreground md:col-span-5">
+          <p
+            data-reveal
+            className="max-w-[42ch] text-[17px] leading-[1.7] text-muted-foreground md:col-span-5"
+          >
             Ask it. Questions, ideas, or something you're stuck on — I'm usually pretty open to a
             conversation.
           </p>
@@ -290,10 +299,10 @@ export function Contact() {
             </a>
             <ul
               data-reveal
-              className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-muted-foreground"
+              className="mt-8 grid max-w-[26rem] grid-cols-2 gap-x-8 gap-y-3 text-[16px] text-muted-foreground sm:grid-cols-3"
             >
               {socials.map((s) => (
-                <li key={s.label}>
+                <li key={s.label} className="border-t border-rule/70 pt-2">
                   <a
                     href={s.href}
                     target="_blank"
@@ -306,6 +315,7 @@ export function Contact() {
               ))}
             </ul>
           </div>
+
         </div>
       </div>
     </section>

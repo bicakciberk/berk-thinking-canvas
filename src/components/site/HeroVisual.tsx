@@ -3,10 +3,42 @@ import gsap from "gsap";
 import { prefersReducedMotion } from "@/lib/useReveal";
 
 /**
- * A "thinking map": curiosity -> learning -> building -> understanding.
- * Nodes are the things Berk is actually learning; the loop back from
- * understanding to curiosity is the point of the drawing.
+ * A small personal thinking map: the things Berk is actually learning,
+ * all circling the same question — how does this work.
  */
+const nodes = [
+  { x: 96, y: 54, tx: 96, ty: 38, anchor: "middle" as const, t: "Frontend", c: "text-coral" },
+  { x: 300, y: 82, tx: 312, ty: 76, anchor: "start" as const, t: "Python", c: "text-teal" },
+  {
+    x: 322,
+    y: 208,
+    tx: 334,
+    ty: 212,
+    anchor: "start" as const,
+    t: "Computer Science",
+    c: "text-teal",
+  },
+  {
+    x: 214,
+    y: 292,
+    tx: 214,
+    ty: 314,
+    anchor: "middle" as const,
+    t: "Industrial Engineering",
+    c: "text-yellow",
+  },
+  {
+    x: 62,
+    y: 232,
+    tx: 74,
+    ty: 254,
+    anchor: "middle" as const,
+    t: "Problem solving",
+    c: "text-coral",
+  },
+
+];
+
 export function HeroVisual({ className = "" }: { className?: string }) {
   const ref = useRef<SVGSVGElement>(null);
 
@@ -14,8 +46,7 @@ export function HeroVisual({ className = "" }: { className?: string }) {
     const el = ref.current;
     if (!el || prefersReducedMotion()) return;
     const ctx = gsap.context(() => {
-      const paths = el.querySelectorAll<SVGPathElement>("[data-draw]");
-      paths.forEach((p) => {
+      el.querySelectorAll<SVGPathElement>("[data-draw]").forEach((p) => {
         const len = p.getTotalLength();
         gsap.fromTo(
           p,
@@ -26,20 +57,13 @@ export function HeroVisual({ className = "" }: { className?: string }) {
       gsap.fromTo(
         el.querySelectorAll("[data-node]"),
         { opacity: 0, scale: 0.6, transformOrigin: "center" },
-        { opacity: 1, scale: 1, duration: 0.6, stagger: 0.12, delay: 0.9, ease: "back.out(2)" },
+        { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, delay: 0.9, ease: "power2.out" },
       );
       gsap.fromTo(
         el.querySelectorAll("[data-label]"),
-        { opacity: 0, y: 6 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.09, delay: 1.1 },
+        { opacity: 0, y: 5 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.09, delay: 1.05 },
       );
-      gsap.to(el.querySelector("[data-orbit]"), {
-        rotate: 360,
-        duration: 90,
-        repeat: -1,
-        ease: "none",
-        transformOrigin: "200px 190px",
-      });
     }, el);
     return () => ctx.revert();
   }, []);
@@ -47,128 +71,70 @@ export function HeroVisual({ className = "" }: { className?: string }) {
   return (
     <svg
       ref={ref}
-      viewBox="-72 -16 544 408"
+      viewBox="-46 8 492 348"
       role="img"
-      aria-label="A hand-drawn style map of how Berk learns: curiosity leads to learning, building and understanding, which loops back into curiosity."
+      aria-label="A small hand-drawn map: frontend, Python, computer science, problem solving and industrial engineering all circling the same question — how does this work."
       className={className}
       fill="none"
     >
-      <g
-        stroke="currentColor"
-        className="text-rule"
-        strokeWidth="1"
-        strokeLinecap="round"
-        data-orbit
-      >
-        <circle cx="200" cy="190" r="128" strokeDasharray="2 7" opacity="0.9" />
-      </g>
-
-      {/* the loop */}
+      {/* the one loose circle everything sits on */}
       <path
         data-draw
-        d="M200 62 C 300 78, 336 148, 318 214 C 300 282, 236 322, 176 312 C 104 300, 66 240, 80 174 C 92 116, 140 74, 200 62"
+        d="M196 44 C 292 52, 344 118, 330 196 C 316 276, 240 318, 160 300 C 84 284, 42 214, 62 146 C 80 84, 136 40, 196 44"
         stroke="currentColor"
-        className="text-foreground/35"
+        className="text-foreground/25"
         strokeWidth="1.1"
+        strokeLinecap="round"
       />
 
-      {/* spokes to the centre */}
-      <g stroke="currentColor" className="text-rule" strokeWidth="1">
-        <path data-draw d="M200 62 L200 158" />
-        <path data-draw d="M318 214 L232 200" />
-        <path data-draw d="M176 312 L192 224" />
-        <path data-draw d="M80 174 L168 186" />
+      {/* two quiet connectors across the middle */}
+      <g stroke="currentColor" className="text-rule" strokeWidth="1" strokeLinecap="round">
+        <path data-draw d="M96 54 C 160 120, 220 150, 322 208" />
+        <path data-draw d="M62 232 C 140 214, 190 176, 300 82" />
       </g>
 
       {/* centre */}
       <g data-node>
-        <circle cx="200" cy="190" r="34" fill="currentColor" className="text-paper" />
-        <circle cx="200" cy="190" r="34" stroke="currentColor" className="text-foreground/50" />
+        <circle cx="196" cy="172" r="46" fill="currentColor" className="text-background" />
+        <circle cx="196" cy="172" r="46" stroke="currentColor" className="text-foreground/45" />
       </g>
       <text
         data-label
-        x="200"
-        y="186"
+        x="196"
+        y="168"
         textAnchor="middle"
-        className="fill-foreground font-serif"
-        fontSize="13"
+        className="fill-foreground font-serif italic"
+        fontSize="15"
       >
-        the
+        how does
       </text>
       <text
         data-label
-        x="200"
-        y="202"
+        x="196"
+        y="187"
         textAnchor="middle"
-        className="fill-foreground font-serif"
-        fontSize="13"
+        className="fill-foreground font-serif italic"
+        fontSize="15"
       >
-        problem
+        this work
       </text>
 
-      {/* four stages */}
-      {[
-        { x: 200, y: 62, t: "Curiosity", c: "text-coral", ax: 200, ay: 44, anchor: "middle" as const },
-        { x: 318, y: 214, t: "Learning", c: "text-teal", ax: 336, ay: 216, anchor: "start" as const },
-        { x: 176, y: 312, t: "Building", c: "text-yellow", ax: 176, ay: 336, anchor: "middle" as const },
-        { x: 80, y: 174, t: "Understanding", c: "text-teal", ax: 62, ay: 176, anchor: "end" as const },
-      ].map((n) => (
+      {nodes.map((n) => (
         <g key={n.t}>
-          <circle data-node cx={n.x} cy={n.y} r="5" className={`fill-current ${n.c}`} />
+          <circle data-node cx={n.x} cy={n.y} r="4.5" className={`fill-current ${n.c}`} />
           <text
             data-label
-            x={n.ax}
-            y={n.ay}
+            x={n.tx}
+            y={n.ty}
             textAnchor={n.anchor}
-            className="fill-foreground font-sans"
-            fontSize="11"
-            letterSpacing="0.12em"
+            className="fill-muted-foreground font-sans"
+            fontSize="12"
+            letterSpacing="0.06em"
           >
-            {n.t.toUpperCase()}
+            {n.t}
           </text>
         </g>
       ))}
-
-      {/* annotations: what is actually being learned */}
-      <g className="fill-muted-foreground font-sans" fontSize="10.5">
-        <text data-label x="286" y="120">
-          Frontend
-        </text>
-        <text data-label x="300" y="138">
-          JavaScript · React
-        </text>
-        <text data-label x="266" y="272">
-          Python
-        </text>
-        <text data-label x="10" y="104">
-          Computer Science
-        </text>
-        <text data-label x="-4" y="252">
-          Problem solving
-        </text>
-        <text data-label x="140" y="358">
-          Industrial Engineering
-        </text>
-      </g>
-
-      <g stroke="currentColor" className="text-rule" strokeWidth="0.9">
-        <path data-draw d="M282 126 L246 148" />
-        <path data-draw d="M270 262 L232 238" />
-        <path data-draw d="M74 110 L138 154" />
-        <path data-draw d="M60 246 L134 224" />
-        <path data-draw d="M176 350 L174 322" />
-      </g>
-
-      <text
-        data-label
-        x="452"
-        y="372"
-        textAnchor="end"
-        className="fill-muted-foreground font-serif italic"
-        fontSize="12"
-      >
-        it starts over, every time
-      </text>
     </svg>
   );
 }
