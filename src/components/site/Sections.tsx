@@ -160,7 +160,8 @@ export function Impact() {
 const certificates = [
   {
     title: "International Computer Science Competition",
-    org: "ICSC",
+    org: "ICSC — International Computer Science Competition",
+
     href: "https://icscompetition.org/c/PerformanceReport-PR-2025-FF7A6D7C715-a2ad1d60c92ccd080b52694f1f6419c2.pdf?t=1768045252",
   },
   {
