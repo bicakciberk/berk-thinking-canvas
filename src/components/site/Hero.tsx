@@ -25,14 +25,14 @@ export function Hero() {
 
   return (
     <section id="top" ref={ref} className="mx-auto max-w-[1180px] px-5 sm:px-8">
-      <div className="grid items-center gap-10 py-16 sm:py-24 md:grid-cols-12 md:gap-6 md:py-28">
+      <div className="grid items-center gap-8 pt-10 pb-12 sm:pt-14 sm:pb-16 md:grid-cols-12 md:gap-6 md:pt-16 md:pb-20">
         <div className="md:col-span-7">
           <p data-hero className="label-xs">
             Berk Bıçakçı — currently preparing for university
           </p>
           <h1
             data-hero
-            className="mt-6 font-serif text-[44px] leading-[1.02] tracking-[-0.02em] sm:text-[68px] lg:text-[82px]"
+            className="mt-5 font-serif text-[44px] leading-[1.02] tracking-[-0.02em] sm:text-[68px] lg:text-[82px]"
           >
             Making sense of
             <br />
@@ -40,12 +40,13 @@ export function Hero() {
           </h1>
           <p
             data-hero
-            className="mt-8 max-w-[52ch] text-[16px] leading-[1.75] text-muted-foreground sm:text-[17px]"
+            className="mt-7 max-w-[52ch] text-[17px] leading-[1.7] text-muted-foreground sm:text-[18px]"
           >
             I'm Berk — a frontend developer who enjoys figuring out how things work. Right now I'm
             exploring computer science, problem solving and Industrial Engineering while preparing
             for university.
           </p>
+
           <div data-hero className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href="#contact"
