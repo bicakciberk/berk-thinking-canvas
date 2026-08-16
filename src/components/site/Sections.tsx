@@ -111,7 +111,7 @@ export function Exploring() {
               <h3 className="font-serif text-[22px] leading-snug sm:col-span-4 sm:text-[24px]">
                 {item.title}
               </h3>
-              <p className="max-w-[46ch] text-[15.5px] text-muted-foreground sm:col-span-6 sm:col-start-7 sm:text-[16px]">
+              <p className="max-w-[48ch] text-[16.5px] leading-[1.7] text-muted-foreground sm:col-span-6 sm:col-start-7 sm:text-[17px]">
                 {item.body}
               </p>
             </li>
