@@ -206,7 +206,10 @@ export function Learning() {
                   <span className="font-serif text-[20px] leading-snug transition-colors group-hover:text-teal sm:text-[23px]">
                     {c.title}
                   </span>
-                  <span className="mt-1 block text-[14px] text-muted-foreground">{c.org}</span>
+                  <span className="mt-1.5 block text-[15.5px] leading-snug text-muted-foreground">
+                    {c.org}
+                  </span>
+
                 </span>
                 <ArrowUpRight
                   className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:text-teal"
