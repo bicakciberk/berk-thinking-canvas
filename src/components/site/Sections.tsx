@@ -16,7 +16,7 @@ const socials = [
 export function About() {
   const ref = useReveal<HTMLElement>();
   return (
-    <section id="about" ref={ref} className="mx-auto max-w-[1180px] px-5 py-24 sm:px-8 sm:py-32">
+    <section id="about" ref={ref} className="mx-auto max-w-[1180px] px-5 pt-12 pb-20 sm:px-8 sm:pt-16 sm:pb-28">
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4">
           <p data-reveal className="label-xs">
@@ -32,7 +32,8 @@ export function About() {
           </h2>
         </div>
 
-        <div className="space-y-6 text-[16px] leading-[1.75] md:col-span-7 md:col-start-6 md:text-[17px]">
+        <div className="space-y-6 text-[17px] leading-[1.75] md:col-span-7 md:col-start-6 md:text-[18px]">
+
           <p data-reveal>
             Hi, I'm Berk. I enjoy learning how things work — and then finding better ways to make
             them work. So far that has taken me from frontend development and coding projects into
