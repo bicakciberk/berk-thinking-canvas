@@ -28,7 +28,7 @@ export function Hero() {
       <div className="grid items-center gap-10 py-16 sm:py-24 md:grid-cols-12 md:gap-6 md:py-28">
         <div className="md:col-span-7">
           <p data-hero className="label-xs">
-            Berk Bıçakçı — Istanbul, preparing for university
+            Berk Bıçakçı — currently preparing for university
           </p>
           <h1
             data-hero
