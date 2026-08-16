@@ -108,10 +108,10 @@ export function HeroVisual({ className = "" }: { className?: string }) {
 
       {/* four stages */}
       {[
-        { x: 200, y: 62, t: "Curiosity", c: "text-coral", ax: 200, ay: 44, anchor: "middle" },
-        { x: 318, y: 214, t: "Learning", c: "text-teal", ax: 336, ay: 216, anchor: "start" },
-        { x: 176, y: 312, t: "Building", c: "text-yellow", ax: 176, ay: 336, anchor: "middle" },
-        { x: 80, y: 174, t: "Understanding", c: "text-teal", ax: 62, ay: 176, anchor: "end" },
+        { x: 200, y: 62, t: "Curiosity", c: "text-coral", ax: 200, ay: 44, anchor: "middle" as const },
+        { x: 318, y: 214, t: "Learning", c: "text-teal", ax: 336, ay: 216, anchor: "start" as const },
+        { x: 176, y: 312, t: "Building", c: "text-yellow", ax: 176, ay: 336, anchor: "middle" as const },
+        { x: 80, y: 174, t: "Understanding", c: "text-teal", ax: 62, ay: 176, anchor: "end" as const },
       ].map((n) => (
         <g key={n.t}>
           <circle data-node cx={n.x} cy={n.y} r="5" className={`fill-current ${n.c}`} />
