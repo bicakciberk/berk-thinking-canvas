@@ -30,12 +30,13 @@ const nodes = [
   {
     x: 62,
     y: 232,
-    tx: 50,
-    ty: 238,
-    anchor: "end" as const,
+    tx: 74,
+    ty: 254,
+    anchor: "middle" as const,
     t: "Problem solving",
     c: "text-coral",
   },
+
 ];
 
 export function HeroVisual({ className = "" }: { className?: string }) {
