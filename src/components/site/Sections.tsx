@@ -129,15 +129,15 @@ export function Impact() {
       <p data-reveal className="label-xs">
         Impact
       </p>
-      <div className="mt-6 grid items-end gap-8 md:grid-cols-12">
+      <div className="mt-6 grid items-end gap-4 md:grid-cols-12 md:gap-6">
         <p
           data-reveal
           className="font-serif text-[64px] leading-[0.9] tracking-tight sm:text-[110px] md:col-span-7 lg:text-[140px]"
         >
           $9,136<span className="text-teal">+</span>
         </p>
-        <div className="md:col-span-4 md:col-start-9">
-          <p data-reveal className="text-[16px] text-muted-foreground">
+        <div className="border-t border-rule/70 pt-4 md:col-span-5 md:col-start-8 md:border-t-0 md:border-l md:pt-0 md:pl-6">
+          <p data-reveal className="max-w-[34ch] text-[17px] leading-[1.6] text-muted-foreground">
             Social impact generated through Catchafire volunteer projects.
           </p>
           <a
@@ -145,13 +145,14 @@ export function Impact() {
             href="https://www.catchafire.org/profiles/3330056/about"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-1 text-[15px] text-teal link-underline"
+            className="mt-3 inline-flex items-center gap-1 text-[16px] text-teal link-underline"
           >
             Catchafire profile
             <ArrowUpRight className="size-4" aria-hidden />
           </a>
         </div>
       </div>
+
     </section>
   );
 }
