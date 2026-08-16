@@ -47,7 +47,7 @@ export function HeroVisual({ className = "" }: { className?: string }) {
   return (
     <svg
       ref={ref}
-      viewBox="0 0 400 380"
+      viewBox="-72 -16 544 408"
       role="img"
       aria-label="A hand-drawn style map of how Berk learns: curiosity leads to learning, building and understanding, which loops back into curiosity."
       className={className}
@@ -137,32 +137,32 @@ export function HeroVisual({ className = "" }: { className?: string }) {
         <text data-label x="300" y="138">
           JavaScript · React
         </text>
-        <text data-label x="248" y="290">
+        <text data-label x="266" y="272">
           Python
         </text>
-        <text data-label x="46" y="112">
+        <text data-label x="10" y="104">
           Computer Science
         </text>
-        <text data-label x="34" y="248">
+        <text data-label x="-4" y="252">
           Problem solving
         </text>
-        <text data-label x="120" y="352">
+        <text data-label x="140" y="358">
           Industrial Engineering
         </text>
       </g>
 
       <g stroke="currentColor" className="text-rule" strokeWidth="0.9">
         <path data-draw d="M282 126 L246 148" />
-        <path data-draw d="M256 282 L228 250" />
-        <path data-draw d="M108 118 L136 152" />
-        <path data-draw d="M96 242 L134 224" />
-        <path data-draw d="M170 344 L172 322" />
+        <path data-draw d="M270 262 L232 238" />
+        <path data-draw d="M74 110 L138 154" />
+        <path data-draw d="M60 246 L134 224" />
+        <path data-draw d="M176 350 L174 322" />
       </g>
 
       <text
         data-label
-        x="336"
-        y="344"
+        x="452"
+        y="372"
         textAnchor="end"
         className="fill-muted-foreground font-serif italic"
         fontSize="12"
