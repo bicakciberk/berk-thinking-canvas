@@ -65,7 +65,7 @@ export function Hero() {
         </div>
 
         <div data-hero className="md:col-span-5">
-          <HeroVisual className="mx-auto w-full max-w-[340px] md:max-w-none" />
+          <HeroVisual className="mx-auto w-full max-w-[400px] md:max-w-none" />
         </div>
       </div>
     </section>
