@@ -237,7 +237,7 @@ const interests = [
 export function BeyondCode() {
   const ref = useReveal<HTMLElement>();
   return (
-    <section id="beyond" ref={ref} className="mx-auto max-w-[1180px] px-5 py-24 sm:px-8 sm:py-32">
+    <section id="beyond" ref={ref} className="mx-auto max-w-[1180px] px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-8 md:grid-cols-12">
         <h2
           data-reveal
@@ -247,19 +247,19 @@ export function BeyondCode() {
           <br />
           at a screen
         </h2>
-        <ul className="flex flex-wrap items-center gap-x-3 gap-y-4 md:col-span-7 md:col-start-6">
-          {interests.map((t, i) => (
+        <ul className="flex max-w-[34ch] flex-wrap items-baseline gap-x-6 gap-y-4 md:col-span-6 md:col-start-6">
+          {interests.map((t) => (
             <li
               key={t}
               data-reveal
-              className="border-b border-rule px-1 pb-1 text-[16px] transition-colors hover:border-teal hover:text-teal"
-              style={{ transform: `translateY(${(i % 3) * 4}px)` }}
+              className="border-b border-rule pb-1 text-[17px] transition-colors hover:border-teal hover:text-teal"
             >
               {t}
             </li>
           ))}
         </ul>
       </div>
+
     </section>
   );
 }
