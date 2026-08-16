@@ -47,20 +47,21 @@ export function Hero() {
             for university.
           </p>
 
-          <div data-hero className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div data-hero className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href="#contact"
-              className="border-b-2 border-coral pb-1 text-[15px] font-medium transition-colors hover:text-coral"
+              className="border-b-2 border-coral pb-1 text-[16px] font-medium transition-colors hover:text-coral"
             >
               Start a conversation
             </a>
             <a
               href="#learning"
-              className="pb-1 text-[15px] text-muted-foreground transition-colors hover:text-foreground"
+              className="pb-1 text-[16px] text-muted-foreground transition-colors hover:text-foreground"
             >
               See my learning path
             </a>
           </div>
+
         </div>
 
         <div data-hero className="md:col-span-5">
